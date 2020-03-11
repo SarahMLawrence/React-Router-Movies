@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
+
 const Movie = (props) => {
   const [movie, setMovie] = useState();
  
+  
   useEffect(() => {
-    const item = movie.find(product => {
-      return product.id === Number(props.match.params.id);
-    }, )
 
-    console.log(movie);
+    
+    const item = this.props;
+
+    
 
    
     // change ^^^ that line and grab the id from the URL
@@ -32,6 +35,8 @@ const Movie = (props) => {
   //addToSavedList(movie)
   //}
 
+  
+
   if (!movie) {
     return <div>Loading movie information...</div>;
   }
@@ -40,7 +45,7 @@ const Movie = (props) => {
   return (
     <div className="save-wrapper">
       <div className="movie-card">
-        <h2>{title}</h2>
+        <h2>{movie.title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
         </div>
